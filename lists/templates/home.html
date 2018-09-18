@@ -10,9 +10,11 @@
             <!-- <input type="hidden" name="csrfmiddlewaretoken" value="5q6R76nkJ6x14A2GLsmQipWEWk1xrVngCg6rjvdSReMv1AA7VsB9COdRTWRG9UQO"> -->
         </form>        
         <table id="id_list_table">
+            {% for item in items %}
             <tr>
-                <td>1: {{ new_item_text }}</td>
+                <td>{{ forloop.counter }}: {{ item.text }}</td>
             </tr>
+            {% endfor %}
         </table>
     </body>
 </html>
