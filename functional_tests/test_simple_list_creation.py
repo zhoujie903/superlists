@@ -31,12 +31,10 @@ class NewVisitorTest(FunctionalTest):
         self.assertRegex(edith_list_url, '/lists/.+')
         self.check_for_row_in_list_table('1: Buy peacock feathers')
 
-
         # # 她 按 回 车 键 后， 页 面 更 新 了
         # # 待 办 事 项 表 格 中 显 示 了“ 1: Buy peacock feathers”
         # inputbox.send_keys(Keys.ENTER)
         # self.check_for_row_in_list_table('1: Buy peacock feathers')
-
 
         # 页 面 中 又 显 示 了 一 个 文 本 框， 可 以 输 入 其 他 的 待 办 事 项
         # 她 输 入 了“ Use peacock feathers to make a fly”（ 使 用 孔 雀 羽 毛 做 假 蝇）
@@ -64,7 +62,7 @@ class NewVisitorTest(FunctionalTest):
 
         # 弗 朗 西 斯 输 入 一 个 新 待 办 事 项， 新 建 一 个 清 单
         # 他 不 像 伊 迪 丝 那 样 兴 趣 盎 然   
-        inputbox = self.get_item_input_box() 
+        inputbox = self.get_item_input_box()
         inputbox.send_keys('Buy milk')
         inputbox.send_keys(Keys.ENTER)
 
@@ -78,20 +76,9 @@ class NewVisitorTest(FunctionalTest):
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertIn('Buy milk', page_text)
 
-
-
-
-
-        # # 伊 迪 丝 想 知 道 这 个 网 站 是 否 会 记 住 她 的 清 单 
+        # # 伊 迪 丝 想 知 道 这 个 网 站 是 否 会 记 住 她 的 清 单
         # # 她 看 到 网 站 为 她 生 成 了 一 个 唯 一 的 URL 
         # # 而 且 页 面 中 有 一 些 文 字 解 说 这 个 功 能
         # self.fail('Finish the test!')
 
-
-
-
-
-
-
         # 应用邀请她一个待办事项
-

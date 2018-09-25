@@ -18,9 +18,9 @@
                             {{ form.text }}
                             {% csrf_token %}
                             <!-- <input type="hidden" name="csrfmiddlewaretoken" value="5q6R76nkJ6x14A2GLsmQipWEWk1xrVngCg6rjvdSReMv1AA7VsB9COdRTWRG9UQO"> -->
-                            {% if error %}
+                            {% if form.errors %}
                                 <div class="form-group has-error">
-                                    <span class="help-block">{{ error }}</span>
+                                    <span class="help-block">{{ form.text.errors }}</span>
                                 </div>
                             {% endif %}
                         </form>
