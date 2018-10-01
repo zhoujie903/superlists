@@ -1,4 +1,9 @@
 from django.db import models
+import uuid
+from django.contrib import auth
+from django.db import models
+
+auth.signals.user_logged_in.disconnect(auth.models.update_last_login)
 
 # Create your models here.
 class User(models.Model):
@@ -10,4 +15,4 @@ class User(models.Model):
 
 class Token(models.Model):
     email = models.EmailField()
-    uid = models.CharField(max_length=40)
+    uid = models.CharField(default=uuid.uuid4, max_length=40)
