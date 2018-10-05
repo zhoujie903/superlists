@@ -26,11 +26,16 @@ def send_login_email(request):
         "Check your email, we've sent you a link you can use to log in.")
     return redirect('/')
 
+
 def login(request):
     print('login view', file=sys.stderr)
     uid = request.GET.get('token')
     user = auth.authenticate(uid)
     if user is not None:
-        print('user is not none')
         auth.login(request, user)
+    return redirect('/')
+
+
+def logout(request):
+    auth.logout(request)
     return redirect('/')
