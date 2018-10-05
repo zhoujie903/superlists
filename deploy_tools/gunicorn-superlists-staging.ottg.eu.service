@@ -1,0 +1,19 @@
+[Unit]
+Description=Gunicorn server for superlists-staging.ottg.eu
+
+[Service]
+Restart=on-failure
+User=parallels
+Environment=EMAIL_PASSWORD=connie112
+WorkingDirectory=/home/parallels/sites/superlists-staging.ottg.eu/source
+ExecStart=/home/parallels/sites/superlists-staging.ottg.eu/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/superlists-staging.ottg.eu.socket \
+    --capture-output \
+    --access-logfile ../access.log \
+    --error-logfile ../error.log \
+    superlists.wsgi:application
+
+
+[Install]
+WantedBy=multi-user.target
+
