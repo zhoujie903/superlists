@@ -4,25 +4,26 @@
 ## 需 要 安 装 的 包： 
 
 * nginx 
-* Python 3 
+* Python 3.6 
 * Git 
 * pip 
 * virtualenv 
 
 以 Ubuntu 为 例， 可 以 执 行 下 面 的 命 令 安 装：
 
-sudo apt-get install nginx git python3 python3-pip
+sudo add-apt-repository ppa:fkrull/deadsnakes
 
-sudo pip3 install virtualenv 
+sudo apt-get install nginx git python36 python3.6-venv
+
 
 ## 配 置 Nginx 虚 拟 主 机 
 
 * 参 考 nginx.template.conf 
 * 把 SITENAME 替 换 成 所 需 的 域 名， 例 如 staging.my-domain.com 
 
-## Upstart 任 务 
+## Systemd service 
 
-* 参 考 gunicorn-upstart.template.conf 
+* 参 考 gunicorn-superlists-staging.ottg.eu.service 
 * 把 SITENAME 替 换 成 所 需 的 域 名， 例 如 staging.my-domain.com 
 
 ## 文 件 夹 结 构： 

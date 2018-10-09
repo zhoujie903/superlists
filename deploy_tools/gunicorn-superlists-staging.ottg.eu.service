@@ -4,7 +4,7 @@ Description=Gunicorn server for superlists-staging.ottg.eu
 [Service]
 Restart=on-failure
 User=parallels
-Environment=EMAIL_PASSWORD=connie112
+Environment=EMAIL_PASSWORD=123456
 WorkingDirectory=/home/parallels/sites/superlists-staging.ottg.eu/source
 ExecStart=/home/parallels/sites/superlists-staging.ottg.eu/virtualenv/bin/gunicorn \
     --bind unix:/tmp/superlists-staging.ottg.eu.socket \
