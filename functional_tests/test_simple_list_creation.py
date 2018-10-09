@@ -51,7 +51,7 @@ class NewVisitorTest(FunctionalTest):
         # 我 们 使 用 一 个 新 浏 览 器 会 话 
         # 确 保 伊 迪 丝 的 信 息 不 会 从 cookie 中 泄 露 出 来
         self.browser.quit()
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Firefox()
 
         # 弗 朗 西 斯 访 问 首 页 
         # 页 面 中 看 不 到 伊 迪 丝 的 清 单
