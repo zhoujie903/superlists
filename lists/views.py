@@ -28,7 +28,7 @@ def new_list(request):
     if form.is_valid():
 
         list_ = List.objects.create()
-        if request.user.is_anonymous:
+        if request.user.is_authenticated:
             list_.owner = request.user
         Item.objects.create(text=request.POST['text'], list=list_)
         form.save(for_list=list_)
