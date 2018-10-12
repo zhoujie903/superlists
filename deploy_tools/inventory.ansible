@@ -1,0 +1,2 @@
+[live]
+10.211.55.3 ansible_become=yes ansible_ssh_user=parallels
