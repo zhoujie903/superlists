@@ -6,6 +6,7 @@ from accounts.models import Token
 from django.urls import reverse
 from django.contrib import auth, messages
 import sys
+from django.conf import settings
 
 
 # Create your views here.
@@ -19,7 +20,7 @@ def send_login_email(request):
     send_mail(
         'Your login link for Superlists',
         message_body,
-        '13456774460@139.com',
+        settings.EMAIL_HOST_USER,
         [email])
     messages.success(
         request,
