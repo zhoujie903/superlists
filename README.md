@@ -24,4 +24,6 @@ $ python3 manage.py runserver
 $ python3 manage.py startapp lists
 
 $ python3 manage.py startapp accounts
+
+$ mkdir deploy_tools functional_tests
 ```
