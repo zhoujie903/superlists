@@ -6,18 +6,19 @@ python:
 
 before_install:
   - echo "before_install" $PWD
-
-install:
-  - echo "install" $PWD
-
-script:
-  - echo "script" $PWD
   - "mkdir -p ./../database"
   - "mkdir -p ./../static"
   - "mkdir -p ./../virtualenv"
   - "ls -la ./.."
+
+install:
+  - echo "install" $PWD
+  - "pip install -r requirements.txt"
+
+script:
+  - echo "script" $PWD  
   - "python manage.py collectstatic --noinput"
   - "ls -la ./../database"
   - "python manage.py migrate --noinput"
   - "ls -la ./../static"
-  - "pip install -r requirements.txt" 
+   
