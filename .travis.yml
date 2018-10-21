@@ -10,5 +10,7 @@ install:
 
 script:
   - echo "script" $PWD
-  - "mkdir -p ./../{database, static, virtualenv}"
+  - "mkdir -p ./../database"
+  - "mkdir -p ./../static"
+  - "mkdir -p ./../virtualenv"
   - "ls -l ./.." 
