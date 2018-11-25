@@ -35,11 +35,12 @@ $ mkdir deploy_tools functional_tests
 
 ## 部署
 
-远程部署：
-比如“服务器”为：parallels@10.211.55.3[Ubuntu 16.0.4]
-本机：macOS,已安装Fabric,已安装Ansible
+远程部署：<br>
+比如<br>
+服务器：parallels@10.211.55.3[Ubuntu 16.0.4]<br>
+本机：macOS,已安装Fabric,已安装Ansible<br>
 
-**deploy_tools/fabfile.py还是Fabric1.x版本**
+**deploy_tools/fabfile.py还是Fabric1.x版本**<br>
 Fabric使用的还是1.x版本
 ```
 ➜  ~ pip3 list
