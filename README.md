@@ -62,4 +62,6 @@ ansible-playbook -i inventory.ansible provision.ansible.yaml -K
 # -K, --ask-become-pass ask for privilege escalation password  
 ```
 
+**因为provision.ansible.yaml使用了apt_repository和apt模块，所以不能在CentOS上部署**
+
 

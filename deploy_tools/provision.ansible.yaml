@@ -5,11 +5,23 @@
     host: "{{ inventory_hostname }}"
 
   tasks:
+    - name: check contents for host
+      debug:
+        msg: "host = {{ host }} distribution = {{ ansible_facts['distribution'] }}"
+
     - name: Deadsnakes PPA to get Python 3.6
       apt_repository:
         repo='ppa:fkrull/deadsnakes'
+      when: (ansible_facts['distribution'] == "Debian") or (ansible_facts['distribution'] == "Ubuntu")
+
     - name: make sure required packages are installed
       apt: pkg=nginx,git,python3.6,python3.6-venv state=present
+      when: (ansible_facts['distribution'] == "Debian") or (ansible_facts['distribution'] == "Ubuntu")
+
+## TODO
+#    - name: make sure required packages are installed
+#      yum: pkg=nginx,git,python3.6,python3.6-venv state=present
+#      when: (ansible_facts['distribution'] == "CentOS")
 
     - name: add nginx config to sites-available
       template: src=./nginx.conf.j2 dest=/etc/nginx/sites-available/{{ host }}
