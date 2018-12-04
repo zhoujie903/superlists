@@ -49,6 +49,7 @@ Package            Version
 Fabric3            1.14.post1
 ```
 
+1. 服务器上要已安装git、python3、pip3；因为用到python3.6的语法，python3链接的版本最低是python3.6
 1. 下载deploy_tools目录到本机
 2. 本机运行deploy_tools/fabfile.py
 ```
